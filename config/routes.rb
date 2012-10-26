@@ -1,4 +1,10 @@
 MmiyachiProj3::Application.routes.draw do
+  get "state_pages/home"
+
+  resources :posts
+
+  resources :admins
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
