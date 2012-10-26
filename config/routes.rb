@@ -1,5 +1,5 @@
 MmiyachiProj3::Application.routes.draw do
-  get "state_pages/home"
+  root :to => 'state_pages#home'
 
   resources :posts
 

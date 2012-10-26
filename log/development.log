@@ -438,3 +438,212 @@ Served asset /state_pages.js - 304 Not Modified (1ms)
 
 Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2012-10-26 13:42:54 -0700
 Served asset /posts.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2012-10-26 13:51:32 -0700
+Served asset /rails.png - 200 OK (2ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2012-10-26 13:54:17 -0700
+Served asset /rails.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2012-10-26 13:54:25 -0700
+Connecting to database specified by database.yml
+Served asset /rails.png - 304 Not Modified (1ms)
+
+
+Started GET "/state_pages/home" for 127.0.0.1 at 2012-10-26 13:54:40 -0700
+Processing by StatePagesController#home as HTML
+  Rendered state_pages/home.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 102ms (Views: 102.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-26 13:54:40 -0700
+Served asset /application.css - 304 Not Modified (50ms)
+
+
+Started GET "/assets/state_pages.css?body=1" for 127.0.0.1 at 2012-10-26 13:54:40 -0700
+Served asset /state_pages.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-26 13:54:40 -0700
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-10-26 13:54:40 -0700
+Served asset /custom.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/admins.css?body=1" for 127.0.0.1 at 2012-10-26 13:54:40 -0700
+Served asset /admins.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2012-10-26 13:54:40 -0700
+Served asset /posts.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-26 13:54:40 -0700
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-26 13:54:40 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/admins.js?body=1" for 127.0.0.1 at 2012-10-26 13:54:40 -0700
+Served asset /admins.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/state_pages.js?body=1" for 127.0.0.1 at 2012-10-26 13:54:40 -0700
+Served asset /state_pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2012-10-26 13:54:40 -0700
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-26 13:54:40 -0700
+Served asset /application.js - 304 Not Modified (14ms)
+
+
+Started GET "/state_pages/home" for 127.0.0.1 at 2012-10-26 13:55:01 -0700
+
+ActionController::RoutingError (No route matches [GET] "/state_pages/home"):
+  actionpack (3.2.7) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.7) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.7) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.7) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.7) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.7) lib/rails/engine.rb:479:in `call'
+  railties (3.2.7) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.7) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2012-10-26 13:55:05 -0700
+Served asset /rails.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2012-10-26 13:55:07 -0700
+Served asset /rails.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-26 13:55:22 -0700
+Processing by StatePagesController#home as HTML
+  Rendered state_pages/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 41ms (Views: 40.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-26 13:55:22 -0700
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-26 13:55:22 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2012-10-26 13:55:22 -0700
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admins.css?body=1" for 127.0.0.1 at 2012-10-26 13:55:22 -0700
+Served asset /admins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/state_pages.css?body=1" for 127.0.0.1 at 2012-10-26 13:55:22 -0700
+Served asset /state_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-10-26 13:55:22 -0700
+Served asset /custom.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-26 13:55:22 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-26 13:55:22 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admins.js?body=1" for 127.0.0.1 at 2012-10-26 13:55:22 -0700
+Served asset /admins.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2012-10-26 13:55:22 -0700
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/state_pages.js?body=1" for 127.0.0.1 at 2012-10-26 13:55:22 -0700
+Served asset /state_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-26 13:55:22 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-26 14:14:21 -0700
+Processing by StatePagesController#home as HTML
+  Rendered state_pages/home.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 25ms (Views: 24.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-26 14:14:21 -0700
+Served asset /application.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/state_pages.css?body=1" for 127.0.0.1 at 2012-10-26 14:14:21 -0700
+Served asset /state_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-26 14:14:21 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2012-10-26 14:14:21 -0700
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-10-26 14:14:21 -0700
+Served asset /custom.css - 304 Not Modified (13ms)
+
+
+Started GET "/assets/admins.css?body=1" for 127.0.0.1 at 2012-10-26 14:14:21 -0700
+Served asset /admins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-26 14:14:21 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-26 14:14:21 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admins.js?body=1" for 127.0.0.1 at 2012-10-26 14:14:21 -0700
+Served asset /admins.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2012-10-26 14:14:21 -0700
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/state_pages.js?body=1" for 127.0.0.1 at 2012-10-26 14:14:21 -0700
+Served asset /state_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-26 14:14:21 -0700
+Served asset /application.js - 304 Not Modified (3ms)
