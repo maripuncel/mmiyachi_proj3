@@ -44,6 +44,7 @@ class AdminsController < ApplicationController
 
     respond_to do |format|
       if @admin.save
+        sign_in @admin
         format.html { redirect_to @admin, notice: 'Admin was successfully created.' }
         format.json { render json: @admin, status: :created, location: @admin }
       else

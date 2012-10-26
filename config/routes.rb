@@ -2,10 +2,12 @@ MmiyachiProj3::Application.routes.draw do
   root :to => 'state_pages#home'
 
   resources :posts
-
   resources :admins
+  resources :sessions
 
   match '/signup', to: 'admins#new'
+  match '/signin', to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

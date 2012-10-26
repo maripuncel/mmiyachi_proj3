@@ -1258,3 +1258,594 @@ Served asset /admins.js - 304 Not Modified (0ms)
 
 Started GET "/assets/state_pages.js?body=1" for 127.0.0.1 at 2012-10-26 14:41:09 -0700
 Served asset /state_pages.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateAdmins (20121026201001)
+Migrating to CreatePosts (20121026202536)
+Migrating to AddIndexToAdminsEmail (20121026212925)
+Migrating to AddRememberTokenToAdmins (20121026215616)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "admins" ADD "remember_token" varchar(255)
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35m (0.1ms)[0m  CREATE INDEX "index_users_on_remember_token" ON "users" ("remember_token")
+SQLite3::SQLException: no such table: main.users: CREATE  INDEX "index_users_on_remember_token" ON "users" ("remember_token")
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateAdmins (20121026201001)
+Migrating to CreatePosts (20121026202536)
+Migrating to AddIndexToAdminsEmail (20121026212925)
+Migrating to AddRememberTokenToAdmins (20121026215616)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "admins" ADD "remember_token" varchar(255)
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("admins")[0m
+  [1m[35m (0.1ms)[0m  CREATE INDEX "index_admins_on_remember_token" ON "admins" ("remember_token")
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20121026215616')[0m
+  [1m[35m (17.0ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (4.6ms)[0m  [1mPRAGMA index_list("admins")[0m
+  [1m[35m (0.1ms)[0m  PRAGMA index_info('index_admins_on_remember_token')
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("posts")[0m
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-26 15:01:07 -0700
+Processing by StatePagesController#home as HTML
+  Rendered state_pages/home.html.erb within layouts/application (0.3ms)
+Compiled sessions.css  (9ms)  (pid 5490)
+Compiled application.css  (38ms)  (pid 5490)
+Compiled sessions.js  (106ms)  (pid 5490)
+Compiled application.js  (135ms)  (pid 5490)
+Completed 200 OK in 227ms (Views: 226.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-26 15:01:07 -0700
+Served asset /application.css - 304 Not Modified (34ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-26 15:01:07 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2012-10-26 15:01:07 -0700
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-10-26 15:01:07 -0700
+Served asset /custom.css - 304 Not Modified (30ms)
+
+
+Started GET "/assets/admins.css?body=1" for 127.0.0.1 at 2012-10-26 15:01:07 -0700
+Served asset /admins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-26 15:01:07 -0700
+Served asset /sessions.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-26 15:01:07 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/state_pages.css?body=1" for 127.0.0.1 at 2012-10-26 15:01:07 -0700
+Served asset /state_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-26 15:01:07 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admins.js?body=1" for 127.0.0.1 at 2012-10-26 15:01:07 -0700
+Served asset /admins.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/state_pages.js?body=1" for 127.0.0.1 at 2012-10-26 15:01:07 -0700
+Served asset /state_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2012-10-26 15:01:07 -0700
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-26 15:01:07 -0700
+Served asset /sessions.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-26 15:01:07 -0700
+Served asset /application.js - 304 Not Modified (11ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2012-10-26 15:01:11 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-26 15:01:11 -0700
+Served asset /application.css - 304 Not Modified (36ms)
+
+
+Started GET "/assets/admins.css?body=1" for 127.0.0.1 at 2012-10-26 15:01:11 -0700
+Served asset /admins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2012-10-26 15:01:11 -0700
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-26 15:01:11 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-26 15:01:11 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-10-26 15:01:11 -0700
+Served asset /custom.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-26 15:01:11 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/state_pages.css?body=1" for 127.0.0.1 at 2012-10-26 15:01:11 -0700
+Served asset /state_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-26 15:01:11 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admins.js?body=1" for 127.0.0.1 at 2012-10-26 15:01:11 -0700
+Served asset /admins.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2012-10-26 15:01:11 -0700
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/state_pages.js?body=1" for 127.0.0.1 at 2012-10-26 15:01:11 -0700
+Served asset /state_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-26 15:01:11 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-26 15:01:11 -0700
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2012-10-26 15:01:21 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FTEYV6jc+eQQVrQAh+nP1HIG0pXojljk2vuH8dT4wzM=", "session"=>{"email"=>"mmiyachi@mit.edu", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1mSELECT "admins".* FROM "admins" WHERE "admins"."email" = 'mmiyachi@mit.edu' LIMIT 1[0m
+Completed 500 Internal Server Error in 183ms
+
+NoMethodError (undefined method `rememeber_token' for #<Admin:0xb5efc940>):
+  app/helpers/sessions_helper.rb:4:in `sign_in'
+  app/controllers/sessions_controller.rb:6:in `create'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (20.2ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-26 15:04:32 -0700
+Processing by StatePagesController#home as HTML
+  Rendered state_pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 19ms (Views: 18.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-26 15:04:32 -0700
+Served asset /application.css - 304 Not Modified (17ms)
+
+
+Started GET "/assets/state_pages.css?body=1" for 127.0.0.1 at 2012-10-26 15:04:32 -0700
+Served asset /state_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-26 15:04:32 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admins.css?body=1" for 127.0.0.1 at 2012-10-26 15:04:32 -0700
+Served asset /admins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-26 15:04:32 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2012-10-26 15:04:32 -0700
+Served asset /posts.css - 304 Not Modified (27ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-10-26 15:04:32 -0700
+Served asset /custom.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-26 15:04:32 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admins.js?body=1" for 127.0.0.1 at 2012-10-26 15:04:32 -0700
+Served asset /admins.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-26 15:04:32 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/state_pages.js?body=1" for 127.0.0.1 at 2012-10-26 15:04:32 -0700
+Served asset /state_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-26 15:04:32 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-26 15:04:32 -0700
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2012-10-26 15:04:32 -0700
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2012-10-26 15:04:33 -0700
+Processing by AdminsController#new as HTML
+  Rendered admins/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 44ms (Views: 38.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-26 15:04:33 -0700
+Served asset /application.css - 304 Not Modified (15ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2012-10-26 15:04:33 -0700
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-26 15:04:33 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-26 15:04:33 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admins.css?body=1" for 127.0.0.1 at 2012-10-26 15:04:33 -0700
+Served asset /admins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-10-26 15:04:33 -0700
+Served asset /custom.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/state_pages.css?body=1" for 127.0.0.1 at 2012-10-26 15:04:33 -0700
+Served asset /state_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-26 15:04:33 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-26 15:04:33 -0700
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/admins.js?body=1" for 127.0.0.1 at 2012-10-26 15:04:33 -0700
+Served asset /admins.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-26 15:04:33 -0700
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-26 15:04:33 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/state_pages.js?body=1" for 127.0.0.1 at 2012-10-26 15:04:33 -0700
+Served asset /state_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2012-10-26 15:04:33 -0700
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started POST "/admins" for 127.0.0.1 at 2012-10-26 15:04:41 -0700
+Processing by AdminsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FTEYV6jc+eQQVrQAh+nP1HIG0pXojljk2vuH8dT4wzM=", "admin"=>{"name"=>"Test", "email"=>"test@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create account"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAdmin Exists (2.9ms)[0m  [1mSELECT 1 AS one FROM "admins" WHERE LOWER("admins"."email") = LOWER('test@test.com') LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "admins" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Fri, 26 Oct 2012 22:04:41 UTC +00:00], ["email", "test@test.com"], ["name", "Test"], ["password_digest", "$2a$10$B2NzwAZVVuH.Yr9KmzraeuCtjEGBuZ9DhlTFgWfoXvw2IRobni7di"], ["remember_token", "H1p3wQB8o7cNQV22vi0DAQ"], ["updated_at", Fri, 26 Oct 2012 22:04:41 UTC +00:00]]
+  [1m[36m (15.4ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 177ms
+
+NoMethodError (undefined method `rememeber_token' for #<Admin:0xb5fee740>):
+  app/helpers/sessions_helper.rb:4:in `sign_in'
+  app/controllers/admins_controller.rb:47:in `block in create'
+  app/controllers/admins_controller.rb:45:in `create'
+
+
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.7ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.2ms)
+  Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.2.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.3ms)
+
+
+Started POST "/admins" for 127.0.0.1 at 2012-10-26 15:06:09 -0700
+Processing by AdminsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FTEYV6jc+eQQVrQAh+nP1HIG0pXojljk2vuH8dT4wzM=", "admin"=>{"name"=>"Test", "email"=>"test@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create account"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAdmin Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "admins" WHERE LOWER("admins"."email") = LOWER('test@test.com') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  Rendered admins/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 122ms (Views: 21.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-26 15:06:10 -0700
+Served asset /application.css - 304 Not Modified (24ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-26 15:06:10 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-26 15:06:10 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2012-10-26 15:06:10 -0700
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-10-26 15:06:10 -0700
+Served asset /custom.css - 304 Not Modified (24ms)
+
+
+Started GET "/assets/admins.css?body=1" for 127.0.0.1 at 2012-10-26 15:06:10 -0700
+Served asset /admins.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/state_pages.css?body=1" for 127.0.0.1 at 2012-10-26 15:06:10 -0700
+Served asset /state_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-26 15:06:10 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-26 15:06:10 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admins.js?body=1" for 127.0.0.1 at 2012-10-26 15:06:10 -0700
+Served asset /admins.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-26 15:06:10 -0700
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-26 15:06:10 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/state_pages.js?body=1" for 127.0.0.1 at 2012-10-26 15:06:10 -0700
+Served asset /state_pages.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2012-10-26 15:06:10 -0700
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started POST "/admins" for 127.0.0.1 at 2012-10-26 15:06:34 -0700
+Processing by AdminsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FTEYV6jc+eQQVrQAh+nP1HIG0pXojljk2vuH8dT4wzM=", "admin"=>{"name"=>"Test", "email"=>"test@mit.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create account"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mAdmin Exists (0.1ms)[0m  SELECT 1 AS one FROM "admins" WHERE LOWER("admins"."email") = LOWER('test@mit.edu') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered admins/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 179ms (Views: 31.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-26 15:06:34 -0700
+Served asset /application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/admins.css?body=1" for 127.0.0.1 at 2012-10-26 15:06:34 -0700
+Served asset /admins.css - 304 Not Modified (23ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2012-10-26 15:06:34 -0700
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-26 15:06:34 -0700
+Served asset /scaffolds.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-26 15:06:34 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-10-26 15:06:34 -0700
+Served asset /custom.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/admins.js?body=1" for 127.0.0.1 at 2012-10-26 15:06:34 -0700
+Served asset /admins.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-26 15:06:34 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-26 15:06:34 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2012-10-26 15:06:34 -0700
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/state_pages.css?body=1" for 127.0.0.1 at 2012-10-26 15:06:34 -0700
+Served asset /state_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-26 15:06:34 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/state_pages.js?body=1" for 127.0.0.1 at 2012-10-26 15:06:34 -0700
+Served asset /state_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-26 15:06:34 -0700
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/admins" for 127.0.0.1 at 2012-10-26 15:06:36 -0700
+Processing by AdminsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FTEYV6jc+eQQVrQAh+nP1HIG0pXojljk2vuH8dT4wzM=", "admin"=>{"name"=>"Test", "email"=>"test@mit.edu", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create account"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAdmin Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "admins" WHERE LOWER("admins"."email") = LOWER('test@mit.edu') LIMIT 1[0m
+Binary data inserted for `string` type on column `password_digest`
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "admins" ("created_at", "email", "name", "password_digest", "remember_token", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Fri, 26 Oct 2012 22:06:36 UTC +00:00], ["email", "test@mit.edu"], ["name", "Test"], ["password_digest", "$2a$10$LmnktCZYdwxsHQsMeW/C4eM/ZsofrWERhWUQThmyaUbXaQ1L4vALK"], ["remember_token", "g4LWRc2VASmi3MbGN-DNtg"], ["updated_at", Fri, 26 Oct 2012 22:06:36 UTC +00:00]]
+  [1m[36m (29.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/admins/3
+Completed 302 Found in 179ms (ActiveRecord: 30.3ms)
+
+
+Started GET "/admins/3" for 127.0.0.1 at 2012-10-26 15:06:36 -0700
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mAdmin Load (0.2ms)[0m  SELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", "3"]]
+  Rendered admins/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 22ms (Views: 16.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-26 15:06:37 -0700
+Served asset /application.css - 304 Not Modified (40ms)
+
+
+Started GET "/assets/admins.css?body=1" for 127.0.0.1 at 2012-10-26 15:06:37 -0700
+Served asset /admins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-10-26 15:06:37 -0700
+Served asset /custom.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-26 15:06:37 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2012-10-26 15:06:37 -0700
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-26 15:06:37 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/state_pages.css?body=1" for 127.0.0.1 at 2012-10-26 15:06:37 -0700
+Served asset /state_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-26 15:06:37 -0700
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-26 15:06:37 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2012-10-26 15:06:37 -0700
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admins.js?body=1" for 127.0.0.1 at 2012-10-26 15:06:37 -0700
+Served asset /admins.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-26 15:06:37 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-26 15:06:37 -0700
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/state_pages.js?body=1" for 127.0.0.1 at 2012-10-26 15:06:37 -0700
+Served asset /state_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-10-26 15:06:42 -0700
+Processing by StatePagesController#home as HTML
+  Rendered state_pages/home.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 18ms (Views: 17.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-26 15:06:42 -0700
+Served asset /application.css - 304 Not Modified (34ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2012-10-26 15:06:42 -0700
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-26 15:06:42 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-26 15:06:42 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-10-26 15:06:42 -0700
+Served asset /custom.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/admins.css?body=1" for 127.0.0.1 at 2012-10-26 15:06:42 -0700
+Served asset /admins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2012-10-26 15:06:42 -0700
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-26 15:06:42 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/state_pages.js?body=1" for 127.0.0.1 at 2012-10-26 15:06:42 -0700
+Served asset /state_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-26 15:06:42 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/state_pages.css?body=1" for 127.0.0.1 at 2012-10-26 15:06:42 -0700
+Served asset /state_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-26 15:06:42 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-26 15:06:42 -0700
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/admins.js?body=1" for 127.0.0.1 at 2012-10-26 15:06:42 -0700
+Served asset /admins.js - 304 Not Modified (0ms)
