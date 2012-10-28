@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  content: MyString
+  author: MyString
+  votes: 1
+  priority: 1
+
+two:
+  content: MyString
+  author: MyString
+  votes: 1
+  priority: 1

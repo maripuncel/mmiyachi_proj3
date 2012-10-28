@@ -15,6 +15,11 @@
   <%= @admin.password_digest %>
 </p>
 
+<%= link_to "New Post", new_post_path %><br/>
+
+<% @posts.each do |post| %>
+<% post.name %>
+<% end %><br/>
 
 <%= link_to 'Edit', edit_admin_path(@admin) %> |
 <%= link_to 'Back', admins_path %>

@@ -14,6 +14,7 @@ class AdminsController < ApplicationController
   # GET /admins/1.json
   def show
     @admin = Admin.find(params[:id])
+    @posts = @admin.posts
 
     respond_to do |format|
       format.html # show.html.erb

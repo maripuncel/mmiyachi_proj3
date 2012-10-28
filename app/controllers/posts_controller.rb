@@ -14,6 +14,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
+    @comments = @post.comments
 
     respond_to do |format|
       format.html # show.html.erb
@@ -40,7 +41,7 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = Post.new(params[:post])
+    @post = current_admin.posts.build(params[:post])
 
     respond_to do |format|
       if @post.save

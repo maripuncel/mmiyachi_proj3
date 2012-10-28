@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121026215616) do
+ActiveRecord::Schema.define(:version => 20121028024733) do
 
   create_table "admins", :force => true do |t|
     t.string   "name"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(:version => 20121026215616) do
   end
 
   add_index "admins", ["remember_token"], :name => "index_admins_on_remember_token"
+
+  create_table "comments", :force => true do |t|
+    t.string   "content"
+    t.string   "author"
+    t.integer  "votes"
+    t.integer  "priority"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "post_id"
+  end
 
   create_table "posts", :force => true do |t|
     t.integer  "admin_id"

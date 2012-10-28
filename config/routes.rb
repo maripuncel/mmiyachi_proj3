@@ -1,4 +1,6 @@
 MmiyachiProj3::Application.routes.draw do
+  resources :comments
+
   root :to => 'state_pages#home'
 
   resources :posts
