@@ -6,7 +6,7 @@
       .click(function() {
         var name = $("input#author").val();
         var content = $("input#content").val();
-        var data = "http://localhost:3000/posts/1/comment?author="+name+"&content="+content;
+        var data = "http://intense-coast-1179.herokuapp.com/posts/1/comment?author="+name+"&content="+content;
         $.ajax({
           type: "POST",
           url: data,
@@ -21,7 +21,7 @@
   $(document).ready(function() {poll();});
   function poll () {
     $.ajax({
-      url: "http://localhost:3000/posts/1/retrieve",
+      url: "http://intense-coast-1179.herokuapp.com/posts/1/retrieve",
       success: function(data) {
         $("#commentBox").html(data);
       }
