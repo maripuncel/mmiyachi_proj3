@@ -1,0 +1,131 @@
+Connecting to database specified by database.yml
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "comments"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("content", "author", "votes", "priority", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 1, '2012-10-29 02:11:41', '2012-10-29 02:11:41', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "comments" ("content", "author", "votes", "priority", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 1, '2012-10-29 02:11:41', '2012-10-29 02:11:41', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "admins"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2012-10-29 02:11:41', '2012-10-29 02:11:41', 980190962)
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2012-10-29 02:11:41', '2012-10-29 02:11:41', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "posts"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "posts" ("admin_id", "url", "name", "created_at", "updated_at", "id") VALUES (1, 'MyString', 'MyString', '2012-10-29 02:11:41', '2012-10-29 02:11:41', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "posts" ("admin_id", "url", "name", "created_at", "updated_at", "id") VALUES (1, 'MyString', 'MyString', '2012-10-29 02:11:41', '2012-10-29 02:11:41', 298486374)
+  [1m[36m (41.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAdmin Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "admins" WHERE LOWER("admins"."email") = LOWER('MyString') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT "admins".* FROM "admins" WHERE "admins"."name" = 'MyString' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."id" IS NULL LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.2ms)[0m  DELETE FROM "comments"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("content", "author", "votes", "priority", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 1, '2012-10-29 02:13:02', '2012-10-29 02:13:02', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "comments" ("content", "author", "votes", "priority", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 1, '2012-10-29 02:13:02', '2012-10-29 02:13:02', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "admins"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2012-10-29 02:13:02', '2012-10-29 02:13:02', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2012-10-29 02:13:02', '2012-10-29 02:13:02', 298486374)[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "posts"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "posts" ("admin_id", "url", "name", "created_at", "updated_at", "id") VALUES (1, 'MyString', 'MyString', '2012-10-29 02:13:02', '2012-10-29 02:13:02', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "posts" ("admin_id", "url", "name", "created_at", "updated_at", "id") VALUES (1, 'MyString', 'MyString', '2012-10-29 02:13:02', '2012-10-29 02:13:02', 298486374)
+  [1m[36m (31.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAdmin Load (0.2ms)[0m  [1mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAdmin Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "admins" WHERE LOWER("admins"."email") = LOWER('MyString') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mAdmin Load (0.2ms)[0m  [1mSELECT "admins".* FROM "admins" WHERE "admins"."name" = 'MyString' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."id" IS NULL LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "comments"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("content", "author", "votes", "priority", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 1, '2012-10-29 02:13:37', '2012-10-29 02:13:37', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "comments" ("content", "author", "votes", "priority", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 1, '2012-10-29 02:13:37', '2012-10-29 02:13:37', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "admins"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2012-10-29 02:13:37', '2012-10-29 02:13:37', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2012-10-29 02:13:37', '2012-10-29 02:13:37', 298486374)[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "posts"
+  [1m[36mFixture Insert (0.0ms)[0m  [1mINSERT INTO "posts" ("admin_id", "url", "name", "created_at", "updated_at", "id") VALUES (1, 'MyString', 'MyString', '2012-10-29 02:13:37', '2012-10-29 02:13:37', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "posts" ("admin_id", "url", "name", "created_at", "updated_at", "id") VALUES (1, 'MyString', 'MyString', '2012-10-29 02:13:37', '2012-10-29 02:13:37', 298486374)
+  [1m[36m (15.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAdmin Load (0.2ms)[0m  [1mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAdmin Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "admins" WHERE LOWER("admins"."email") = LOWER('MyString') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT "admins".* FROM "admins" WHERE "admins"."name" = 'MyString' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."id" IS NULL LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "comments"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "comments" ("content", "author", "votes", "priority", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 1, '2012-10-29 02:14:41', '2012-10-29 02:14:41', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "comments" ("content", "author", "votes", "priority", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 1, '2012-10-29 02:14:41', '2012-10-29 02:14:41', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "admins"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2012-10-29 02:14:41', '2012-10-29 02:14:41', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2012-10-29 02:14:41', '2012-10-29 02:14:41', 298486374)[0m
+  [1m[35mFixture Delete (0.0ms)[0m  DELETE FROM "posts"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "posts" ("admin_id", "url", "name", "created_at", "updated_at", "id") VALUES (1, 'MyString', 'MyString', '2012-10-29 02:14:41', '2012-10-29 02:14:41', 980190962)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "posts" ("admin_id", "url", "name", "created_at", "updated_at", "id") VALUES (1, 'MyString', 'MyString', '2012-10-29 02:14:41', '2012-10-29 02:14:41', 298486374)
+  [1m[36m (27.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mAdmin Load (0.3ms)[0m  [1mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAdmin Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "admins" WHERE LOWER("admins"."email") = LOWER('MyString') LIMIT 1[0m
+  [1m[35m (2.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT "admins".* FROM "admins" WHERE "admins"."name" = 'MyString' LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."id" = 980190962 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  UPDATE "comments" SET "votes" = 2, "updated_at" = '2012-10-29 02:14:41.576653' WHERE "comments"."id" = 980190962
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.7ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "comments"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "comments" ("content", "author", "votes", "priority", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 1, '2012-10-29 02:15:04', '2012-10-29 02:15:04', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "comments" ("content", "author", "votes", "priority", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 1, 1, '2012-10-29 02:15:04', '2012-10-29 02:15:04', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "admins"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2012-10-29 02:15:04', '2012-10-29 02:15:04', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "admins" ("name", "email", "password_digest", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', '2012-10-29 02:15:04', '2012-10-29 02:15:04', 298486374)[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "posts"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "posts" ("admin_id", "url", "name", "created_at", "updated_at", "id") VALUES (1, 'MyString', 'MyString', '2012-10-29 02:15:04', '2012-10-29 02:15:04', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "posts" ("admin_id", "url", "name", "created_at", "updated_at", "id") VALUES (1, 'MyString', 'MyString', '2012-10-29 02:15:04', '2012-10-29 02:15:04', 298486374)
+  [1m[36m (36.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mAdmin Load (0.2ms)[0m  [1mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mAdmin Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM "admins" WHERE LOWER("admins"."email") = LOWER('MyString') LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+  [1m[36mAdmin Load (0.1ms)[0m  [1mSELECT "admins".* FROM "admins" WHERE "admins"."name" = 'MyString' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 980190962]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT 1[0m  [["id", 980190962]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."id" = 980190962 LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  UPDATE "comments" SET "votes" = 2, "updated_at" = '2012-10-29 02:15:05.026208' WHERE "comments"."id" = 980190962
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Connecting to database specified by database.yml
