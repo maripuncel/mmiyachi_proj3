@@ -10,7 +10,13 @@ Please put it here: http://intense-coast-1179.herokuapp.com
 
 ###Notes
 
-Any instructions or notes for your grader should be placed here.
+This is a software as a service, and once an administrator signs in and creates a post,
+they will be givin a Javascript/HTML snippet to put on their webpage that will display comments.
+
+Comments and votes are polled every 10 seconds. Only the comments themselves are rerendered; the
+rest of the page is not refreshed. 
+
+A test page for this service can be found at http://intense-coast-1179.herokuapp.com/test.
 
 
 ###Code Deliverables

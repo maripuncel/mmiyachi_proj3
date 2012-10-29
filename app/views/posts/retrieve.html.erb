@@ -2,7 +2,7 @@
 </script>
 <script>
   function vote(id) {
-    var data = "http://intense-coast-1179.herokuapp.com/posts/1/vote?comment_id="+id;
+    var data = "http://localhost:3000/posts/1/vote?comment_id="+id;
     $.ajax({
       url: data,
       success: function() {

@@ -92320,3 +92320,154 @@ Served asset /application.js - 304 Not Modified (0ms)
 
 Started GET "/assets/state_pages.js?body=1" for 127.0.0.1 at 2012-10-28 17:56:36 -0700
 Served asset /state_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/posts/2" for 127.0.0.1 at 2012-10-28 18:10:22 -0700
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mAdmin Load (0.2ms)[0m  SELECT "admins".* FROM "admins" WHERE "admins"."remember_token" = 'k6NTZq8gfr_SI2D23MUXsQ' LIMIT 1
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mAdmin Load (0.1ms)[0m  SELECT "admins".* FROM "admins" WHERE "admins"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 2
+  Rendered posts/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 53ms (Views: 46.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-28 18:10:22 -0700
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/admins.css?body=1" for 127.0.0.1 at 2012-10-28 18:10:22 -0700
+Served asset /admins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2012-10-28 18:10:22 -0700
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-10-28 18:10:22 -0700
+Served asset /custom.css - 304 Not Modified (22ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2012-10-28 18:10:22 -0700
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-28 18:10:22 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/state_pages.css?body=1" for 127.0.0.1 at 2012-10-28 18:10:22 -0700
+Served asset /state_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-28 18:10:22 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-28 18:10:22 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-28 18:10:22 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admins.js?body=1" for 127.0.0.1 at 2012-10-28 18:10:22 -0700
+Served asset /admins.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2012-10-28 18:10:22 -0700
+Served asset /comments.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2012-10-28 18:10:22 -0700
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-28 18:10:22 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/state_pages.js?body=1" for 127.0.0.1 at 2012-10-28 18:10:22 -0700
+Served asset /state_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-28 18:10:22 -0700
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/admins/1" for 127.0.0.1 at 2012-10-28 18:10:38 -0700
+Processing by AdminsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdmin Load (0.2ms)[0m  [1mSELECT "admins".* FROM "admins" WHERE "admins"."remember_token" = 'k6NTZq8gfr_SI2D23MUXsQ' LIMIT 1[0m
+  [1m[35mAdmin Load (0.1ms)[0m  SELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mPost Load (0.1ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."admin_id" = 1
+  Rendered admins/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 27ms (Views: 21.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-10-28 18:10:38 -0700
+Served asset /application.css - 304 Not Modified (54ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2012-10-28 18:10:39 -0700
+Served asset /custom.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-10-28 18:10:39 -0700
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.css?body=1" for 127.0.0.1 at 2012-10-28 18:10:39 -0700
+Served asset /posts.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.css?body=1" for 127.0.0.1 at 2012-10-28 18:10:39 -0700
+Served asset /comments.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admins.css?body=1" for 127.0.0.1 at 2012-10-28 18:10:39 -0700
+Served asset /admins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/state_pages.css?body=1" for 127.0.0.1 at 2012-10-28 18:10:39 -0700
+Served asset /state_pages.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-10-28 18:10:39 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-10-28 18:10:39 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.css?body=1" for 127.0.0.1 at 2012-10-28 18:10:39 -0700
+Served asset /sessions.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/comments.js?body=1" for 127.0.0.1 at 2012-10-28 18:10:39 -0700
+Served asset /comments.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/admins.js?body=1" for 127.0.0.1 at 2012-10-28 18:10:39 -0700
+Served asset /admins.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/posts.js?body=1" for 127.0.0.1 at 2012-10-28 18:10:39 -0700
+Served asset /posts.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/sessions.js?body=1" for 127.0.0.1 at 2012-10-28 18:10:39 -0700
+Served asset /sessions.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/state_pages.js?body=1" for 127.0.0.1 at 2012-10-28 18:10:39 -0700
+Served asset /state_pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-10-28 18:10:39 -0700
+Served asset /application.js - 304 Not Modified (1ms)
