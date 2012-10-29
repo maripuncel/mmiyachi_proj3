@@ -1,5 +1,5 @@
 class AdminsController < ApplicationController
-
+  # authenticate admin
   before_filter :signed_in_admin, only: [:edit, :update, :show]
   before_filter :correct_admin, only: [:edit, :update, :show]
 
@@ -78,10 +78,13 @@ class AdminsController < ApplicationController
 
   private
 
+    # authenticate admin
+    # allows access to only signed in users
     def signed_in_admin
       redirect_to signin_url, notice: "Please sign in." unless signed_in?
     end
 
+    # allows access to only specific admin
     def correct_admin
       @admin = Admin.find(params[:id])
       redirect_to(root_path) unless current_admin?(@admin)

@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+
+  # authenticate admin
   before_filter :signed_in_admin, only: [:edit, :update, :show]
   before_filter :correct_admin, only: [:edit, :update, :show]
   respond_to :html, :xml, :json
@@ -15,6 +17,9 @@ class PostsController < ApplicationController
     end
   end
 
+  # Creates new comment
+  # Input: author and content strings
+  # Output: new comment with author and content attributes set, votes = 0
   def comment
     set_cors_headers
     if @post = Post.find(params[:id])
@@ -24,6 +29,8 @@ class PostsController < ApplicationController
     end
   end
 
+  # Returns comment information in HTML
+  # Sorts comments by votes, highest to lowest
   def retrieve
     set_cors_headers
     if @post = Post.find(params[:id])
@@ -32,13 +39,13 @@ class PostsController < ApplicationController
     end
   end
 
+  # Alters vote count of specified comment
+  # Input: comment ID
+  # Output: updated comment with new vote count
   def vote
     set_cors_headers
     if @post = Post.find(params[:id])
-      if @comment = Comment.find(params[:comment_id].to_i)
-        @comment_votes = @comment.votes + 1
-        @comment.update_attributes(votes: @comment_votes)
-      end
+      @post.increment_votes(params[:comment_id].to_i)
     end
   end
 
@@ -102,6 +109,7 @@ class PostsController < ApplicationController
     end
   end
 
+  # Cross Origin Policy
   def set_cors_headers
     headers["Access-Control-Allow-Origin"] = "*"
     headers["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"
@@ -121,10 +129,13 @@ class PostsController < ApplicationController
 
   private
 
+    # authenticate admin
+    # ensure admin accessing post information is signed in
     def signed_in_admin
       redirect_to signin_url, notice: "Please sign in" unless signed_in?
     end
 
+    # ensure admin accessing post information is the owner
     def correct_admin
       @post = Post.find(params[:id])
       @admin = Admin.find_by_id(@post.admin_id)
