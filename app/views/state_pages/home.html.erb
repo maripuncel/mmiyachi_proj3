@@ -1,4 +1,8 @@
 <div class="center hero-unit">
   <h1> Welcome to Commentomatic </h1>
+  <% if signed_in? %>
+  <h3><%= link_to "See it in action", test_url %></h3>
+  <% else %>
   <%= link_to "Sign up", signup_url, class: "btn btn-large btn-primary" %>
+  <% end %>
 </div>

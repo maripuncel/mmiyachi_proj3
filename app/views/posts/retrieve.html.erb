@@ -1,0 +1,16 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="test/javascript">
+</script>
+<script>
+  function vote(id) {
+    var data = "http://localhost:3000/posts/1/vote?comment_id="+id;
+    $.ajax({
+      url: data,
+      success: function() {
+      }
+    });
+  };
+</script>
+<% @comments.each do |comment| %>
+<p> Author: <%= comment.author %>, Content: <%= comment.content %>, Votes: <%= comment.votes %> 
+<button type="submit" class="vote_button" onclick="vote(<%= comment.id %>)">Vote </button> </p>
+<% end %>

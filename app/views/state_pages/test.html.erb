@@ -1,0 +1,44 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="test/javascript">
+</script>
+<script>
+  $(function () {
+    $( "#submit_button" )
+      .click(function() {
+        var name = $("input#author").val();
+        var content = $("input#content").val();
+        var data = "http://localhost:3000/posts/1/comment?author="+name+"&content="+content;
+        $.ajax({
+          type: "POST",
+          url: data,
+          cache: false,
+          success: function() {
+            $("#commentBox").append("<p>Yay</p>");
+          }
+        });
+        poll();
+      });
+  });
+  $(document).ready(function() {poll();});
+  function poll () {
+    $.ajax({
+      url: "http://localhost:3000/posts/1/retrieve",
+      success: function(data) {
+        $("#commentBox").html(data);
+      }
+    });
+    setTimeout(poll, 10000);
+  };
+</script>
+
+<h1> Test </h1>
+
+<div id="commentomatic">
+  <div id="commentBox"></div>
+  <form id="commentForm" method="post">
+    <label for="author">Name: </label>
+    <input for="author"id="author"/>
+    <label for="content">Comment: </label>
+    <input for="content" id="content"/><br/>
+    <input type="submit" class="button" id="submit_button" value="Comment" />
+  </form>
+</div>

@@ -17,6 +17,10 @@ module SessionsHelper
     @current_admin ||= Admin.find_by_remember_token(cookies[:remember_token])
   end
 
+  def current_admin?(admin)
+    admin == current_admin
+  end
+
   def sign_out
     self.current_admin = nil
     cookies.delete(:remember_token)

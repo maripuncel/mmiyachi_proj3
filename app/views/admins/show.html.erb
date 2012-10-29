@@ -10,16 +10,11 @@
   <%= @admin.email %>
 </p>
 
-<p>
-  <b>Password digest:</b>
-  <%= @admin.password_digest %>
-</p>
 
 <%= link_to "New Post", new_post_path %><br/>
 
-<% @posts.each do |post| %>
-<% post.name %>
+<h3>My Posts</h3>
+<% @admin.posts.each do |post| %>
+<p><%= link_to post.name, post_path(post) %></p>
 <% end %><br/>
 
-<%= link_to 'Edit', edit_admin_path(@admin) %> |
-<%= link_to 'Back', admins_path %>

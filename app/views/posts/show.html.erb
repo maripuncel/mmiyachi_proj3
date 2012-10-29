@@ -15,10 +15,59 @@
   <%= @post.name %>
 </p>
 
+<h3>Comments</h3>
 <% if @comments.any? %>
 <% @comments.each do |comment| %>
-Author: <% comment.author %>, Content: <% comment.content %><br/>
+Author: <%= comment.author %>, Content: <%= comment.content %>, votes: <%= comment.votes %><br/>
 <% end %><% end %><br/>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Back', current_admin %>
+
+<br/><br/>
+<h3>Insert this HTML/Javascript into your post</h3>
+&lt script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="test/javascript" &gt
+&lt /script &gt
+&lt script &gt
+  $(function () {
+          $( "#submit_button" )
+                .click(function() {
+                          var name = $("input#author").val();
+                                  var content = $("input#content").val();
+                                          var data = "http://localhost:3000/posts/<%= @post.id %>/comment?author="+name+"&content="+content;
+                                                  $.ajax({
+                                                              type: "POST",
+                                                                        url: data,
+                                                                                  cache: false,
+                                                                                            success: function() {
+                                                                                                        $("#commentBox").append("<p>Yay</p>");
+                                                                                                                  }
+                                                                                                                          });
+                                                          poll();
+                                                                });
+                  });
+  $(document).ready(function() {poll();});
+    function poll () {
+          $.ajax({
+                    url: "http://localhost:3000/posts/<%= @post.id %>/retrieve",
+                          success: function(data) {
+                                  $("#commentBox").html(data);
+                                        }
+                                            });
+              setTimeout(poll, 10000);
+                };
+&lt /script &gt
+<br/><br/>
+&lt div id="commentomatic" &gt
+   &lt div id="commentBox" &gt
+     &lt form id="commentForm" method="post" &gt
+      &lt label for="author" &gt Name:  &lt /label &gt
+      &lt input for="author" id="author" &gt
+      &lt label for="content" &gt Comment: &lt /label &gt
+      &lt input for="content" id="content" &gt &lt br &gt
+      &lt input type="submit" class="button" id="submit_button" value="Comment" &gt
+    &lt /form &gt
+  &lt /div &gt
+&lt /div &gt
+
+

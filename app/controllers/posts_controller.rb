@@ -1,14 +1,7 @@
 class PostsController < ApplicationController
-  # GET /posts
-  # GET /posts.json
-  def index
-    @posts = Post.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @posts }
-    end
-  end
+  before_filter :signed_in_admin, only: [:edit, :update, :show]
+  before_filter :correct_admin, only: [:edit, :update, :show]
+  respond_to :html, :xml, :json
 
   # GET /posts/1
   # GET /posts/1.json
@@ -19,6 +12,33 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @post }
+    end
+  end
+
+  def comment
+    set_cors_headers
+    if @post = Post.find(params[:id])
+      @author = params[:author].to_s
+      @content = params[:content].to_s
+      @comment = @post.comments.create(author: @author, content: @content, votes: 0)
+    end
+  end
+
+  def retrieve
+    set_cors_headers
+    if @post = Post.find(params[:id])
+      @comments = @post.comments.all.sort_by(&:votes).reverse
+      respond_with(@comments.to_json)
+    end
+  end
+
+  def vote
+    set_cors_headers
+    if @post = Post.find(params[:id])
+      if @comment = Comment.find(params[:comment_id].to_i)
+        @comment_votes = @comment.votes + 1
+        @comment.update_attributes(votes: @comment_votes)
+      end
     end
   end
 
@@ -41,7 +61,7 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = current_admin.posts.build(params[:post])
+    @post = current_admin.posts.create(params[:post])
 
     respond_to do |format|
       if @post.save
@@ -81,4 +101,34 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def set_cors_headers
+    headers["Access-Control-Allow-Origin"] = "*"
+    headers["Access-Control-Allow-Methods"] = "POST, GET, OPTIONS"
+    headers["Access-Control-Allow-Headers"] = "Content-Type, Origin, Referer, User-Agent"
+    headers["Access-Control-Max-Age"] = "3600"
+  end
+
+  def resource_preflight
+    set_cors_headers
+    render :text => "", :content_type => "text/plain"
+  end
+
+  def resources
+    set_cors_headers
+    render :text => "OK here is your restricted resource!"
+  end
+
+  private
+
+    def signed_in_admin
+      redirect_to signin_url, notice: "Please sign in" unless signed_in?
+    end
+
+    def correct_admin
+      @post = Post.find(params[:id])
+      @admin = Admin.find_by_id(@post.admin_id)
+      redirect_to(root_path) unless current_admin?(@admin)
+    end
+
 end

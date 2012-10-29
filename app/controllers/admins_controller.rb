@@ -1,14 +1,7 @@
 class AdminsController < ApplicationController
-  # GET /admins
-  # GET /admins.json
-  def index
-    @admins = Admin.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @admins }
-    end
-  end
+  before_filter :signed_in_admin, only: [:edit, :update, :show]
+  before_filter :correct_admin, only: [:edit, :update, :show]
 
   # GET /admins/1
   # GET /admins/1.json
@@ -82,4 +75,16 @@ class AdminsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+
+    def signed_in_admin
+      redirect_to signin_url, notice: "Please sign in." unless signed_in?
+    end
+
+    def correct_admin
+      @admin = Admin.find(params[:id])
+      redirect_to(root_path) unless current_admin?(@admin)
+    end
+
 end

@@ -10,6 +10,17 @@ MmiyachiProj3::Application.routes.draw do
   match '/signup', to: 'admins#new'
   match '/signin', to: 'sessions#new'
   match '/signout', to: 'sessions#destroy'
+  match '/test', to: 'state_pages#test'
+  match 'posts/:id/comment', to: 'posts#comment'
+  match 'posts/:id/retrieve', to: 'posts#retrieve'
+  match 'posts/:id/vote', to: 'posts#vote'
+
+  match 'posts/:id/comment' => 'posts#resource_preflight', :constraints => {:method => "OPTIONS" }
+  match 'posts/:id/comment' => 'posts#resource'
+  match 'posts/:id/retrieve' => 'posts#resource_preflight', :constraints => {:method => "OPTIONS" }
+  match 'posts/:id/retrieve' => 'posts#resource'
+  match 'posts/:id/vote' => 'posts#resource_preflight', :constraints => {:method => "OPTIONS" }
+  match 'posts/:id/vote' => 'posts#resource'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

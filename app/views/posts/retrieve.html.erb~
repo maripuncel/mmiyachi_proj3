@@ -1,0 +1,4 @@
+
+<% @comments.each do |comment| %>
+<p> Author: <%= comment.author %>, Content: <%= comment.content %> </p> <input type="vote" value="Vote" />
+<% end %>
