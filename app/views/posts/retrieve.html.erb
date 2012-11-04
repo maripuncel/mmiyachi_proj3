@@ -1,6 +1,11 @@
 <div id="comments">
+<% @priority.each do |comment| %>
+<p> Author: <%= comment.author %>, Content: <%= comment.content %>, Votes: <%= comment.votes %>
+<button type="submit" class="vote_button" onclick="vote(<%= comment.id %>)"> Vote </button>
+Prioritized by admin</p>
+<% end %>
 <% @comments.each do |comment| %>
-<p> Author: <%= comment.author %>, Content: <%= comment.content %>, Votes: <%= comment.votes %> 
-<button type="submit" class="vote_button" onclick="vote(<%= comment.id %>)">Vote </button> </p>
+<p> Author: <%= comment.author %>, Content: <%= comment.content %>, Votes: <%= comment.votes %>
+<button type="submit" class="vote_button" onclick="vote(<%= comment.id %>)">Vote </button></p> 
 <% end %>
 </div>

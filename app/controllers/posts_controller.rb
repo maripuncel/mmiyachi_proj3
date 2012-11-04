@@ -25,7 +25,10 @@ class PostsController < ApplicationController
     if @post = Post.find(params[:id])
       @author = params[:author].to_s
       @content = params[:content].to_s
-      @comment = @post.comments.create(author: @author, content: @content, votes: 0)
+      @comment = @post.comments.create(author: @author,
+                                      content: @content,
+                                      votes: 0,
+                                      priority: 0)
     end
   end
 
@@ -34,9 +37,19 @@ class PostsController < ApplicationController
   def retrieve
     set_cors_headers
     if @post = Post.find(params[:id])
-      @comments = @post.comments.all.sort_by(&:votes).reverse
+      @priority = @post.comments.where('priority == 1').all.sort_by(&:votes).reverse
+      @comments = @post.comments.where('priority < 1').all.sort_by(&:votes).reverse
       respond_with(@comments.to_json)
     end
+  end
+
+  # Sets priority bit for comment
+  def priority
+    @post = Post.find(params[:id])
+    if @comment = Comment.find(params[:cid])
+      @comment.set_priority
+    end
+    redirect_to @post
   end
 
   # Alters vote count of specified comment

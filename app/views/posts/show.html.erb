@@ -18,7 +18,15 @@
 <h3>Comments</h3>
 <% if @comments.any? %>
 <% @comments.each do |comment| %>
-Author: <%= comment.author %>, Content: <%= comment.content %>, votes: <%= comment.votes %><br/>
+Author: <%= comment.author %>,
+Content: <%= comment.content %>,
+Votes: <%= comment.votes %>,
+<% if comment.priority == 1 %> Priority: True 
+<%= link_to "Set False", priority_path(:cid => comment.id) %>
+<% else %> Priority: False 
+<%= link_to "Set True", priority_path(:cid => comment.id) %>
+<% end %>
+<br/>
 <% end %><% end %><br/>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

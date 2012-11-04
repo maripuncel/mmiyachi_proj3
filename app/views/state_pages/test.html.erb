@@ -2,7 +2,7 @@
 </script>
 <script>
   function vote(id) {
-    var data = "http://localhost:3000/posts/1/vote?comment_id="+id;
+    var data = "http://localhost:3000/posts/4/vote?comment_id="+id;
     $.ajax({
       url: data,
       success: function () {
@@ -16,7 +16,7 @@
       .click(function() {
         var name = $("input#author").val();
         var content = $("input#content").val();
-        var data = "http://localhost:3000/posts/1/comment?author="+name+"&content="+content;
+        var data = "http://localhost:3000/posts/4/comment?author="+name+"&content="+content;
         $.ajax({
           type: "POST",
           url: data,
@@ -30,7 +30,7 @@
   });
   $(document).ready(function() {poll();});
   function poll () {
-    $("#commentBox").load("http://localhost:3000/posts/1/retrieve #comments");
+    $("#commentBox").load("http://localhost:3000/posts/4/retrieve #comments");
     setTimeout(poll, 1000);
   };
 </script>
