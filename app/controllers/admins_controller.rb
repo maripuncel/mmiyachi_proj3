@@ -7,7 +7,7 @@ class AdminsController < ApplicationController
   # GET /admins/1.json
   def show
     @admin = Admin.find(params[:id])
-    @posts = @admin.posts
+    @posts = Post.find_all_by_admin_id(@admin.id)
 
     respond_to do |format|
       format.html # show.html.erb

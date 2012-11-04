@@ -14,7 +14,7 @@
 <%= link_to "New Post", new_post_path %><br/>
 
 <h3>My Posts</h3>
-<% @admin.posts.each do |post| %>
+<% @posts.each do |post| %>
 <p><%= link_to post.name, post_path(post) %></p>
 <% end %><br/>
 
