@@ -37,7 +37,7 @@ class PostsController < ApplicationController
   def retrieve
     set_cors_headers
     if @post = Post.find(params[:id])
-      @priority = @post.comments.where('priority == 1').all.sort_by(&:votes).reverse
+      @priority = @post.comments.where('priority = 1').all.sort_by(&:votes).reverse
       @comments = @post.comments.where('priority < 1').all.sort_by(&:votes).reverse
       respond_with(@comments.to_json)
     end
