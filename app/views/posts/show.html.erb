@@ -38,7 +38,7 @@ Votes: <%= comment.votes %>,
 &lt/script&gt<br/>
 &ltscript&gt
  function vote(id) {
-   var data = "http://localhost:3000/posts/"<%= @post.id %>"/vote?comment_id="+id;
+   var data = "http://localhost:3000/posts/<%= @post.id %>/vote?comment_id="+id;
    $.ajax({
      url: data,
      success: function () {
@@ -52,7 +52,7 @@ Votes: <%= comment.votes %>,
      .click(function() {
        var name = $("input#author").val();
        var content = $("input#content").val();
-       var data = "http://localhost:3000/posts/"<%= @post.id %>"/comment?author="+name+"&content="+content;
+       var data = "http://localhost:3000/posts/<%= @post.id %>/comment?author="+name+"&content="+content;
        $.ajax({
          type: "POST",
          url: data,
@@ -66,7 +66,7 @@ Votes: <%= comment.votes %>,
  });
  $(document).ready(function() {poll();});
  function poll () {
-   $("#commentBox").load("http://localhost:3000/posts/"<%= @post.id %>"/retrieve #comments");
+   $("#commentBox").load("http://localhost:3000/posts/<%= @post.id %>/retrieve #comments");
    setTimeout(poll, 1000);
  };
 &lt/script&gt<br/>

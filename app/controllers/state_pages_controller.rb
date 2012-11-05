@@ -4,4 +4,7 @@ class StatePagesController < ApplicationController
 
   def test
   end
+
+  def new_test
+  end
 end

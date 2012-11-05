@@ -15,6 +15,7 @@ MmiyachiProj3::Application.routes.draw do
   match 'posts/:id/retrieve', to: 'posts#retrieve'
   match 'posts/:id/vote', to: 'posts#vote'
   match 'posts/:id/priority', to: 'posts#priority', :as => :priority
+  match '/new_test', to: 'state_pages#new_test'
 
   match 'posts/:id/comment' => 'posts#resource_preflight', :constraints => {:method => "OPTIONS" }
   match 'posts/:id/comment' => 'posts#resource'
