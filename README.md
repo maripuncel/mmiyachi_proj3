@@ -16,7 +16,7 @@ they will be givin a Javascript/HTML snippet to put on their webpage that will d
 Comments and votes are polled every 10 seconds. Only the comments themselves are rerendered; the
 rest of the page is not refreshed. 
 
-A test page for this service can be found at http://intense-coast-1179.herokuapp.com/test.
+A test page for this service can be found at http://intense-coast-1179.herokuapp.com/new_test.
 
 
 ###Code Deliverables
