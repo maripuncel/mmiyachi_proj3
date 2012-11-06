@@ -10,7 +10,6 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comments = @post.comments
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @post }
@@ -57,6 +56,7 @@ class PostsController < ApplicationController
   # Output: updated comment with new vote count
   def vote
     set_cors_headers
+    cookies[:voted] = Hash.new if ! cookies[:voted]
     if @post = Post.find(params[:id])
       @post.increment_votes(params[:comment_id].to_i)
     end

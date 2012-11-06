@@ -13,7 +13,7 @@ MmiyachiProj3::Application.routes.draw do
   match '/test', to: 'state_pages#test'
   match 'posts/:id/comment', to: 'posts#comment'
   match 'posts/:id/retrieve', to: 'posts#retrieve'
-  match 'posts/:id/vote', to: 'posts#vote'
+  match 'posts/:id/vote', to: 'posts#vote', :as => :vote
   match 'posts/:id/priority', to: 'posts#priority', :as => :priority
   match '/new_test', to: 'state_pages#new_test'
 

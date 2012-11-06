@@ -34,4 +34,9 @@ module SessionsHelper
     cookies.delete(:remember_token)
   end
 
+  # Returns boolean true if user has voted
+  def voted
+    session[:vote] = true
+  end
+
 end

@@ -1,11 +1,15 @@
 <div id="comments">
 <% @priority.each do |comment| %>
 <p> Author: <%= comment.author %>, Content: <%= comment.content %>, Votes: <%= comment.votes %>
-<button type="submit" class="vote_button" onclick="vote(<%= comment.id %>)"> Vote </button>
+<% if ! cookies[:voted] %>
+<%= link_to 'Vote', vote_path(:comment_id => comment.id) %>
+<% end %>
 Prioritized by admin</p>
 <% end %>
 <% @comments.each do |comment| %>
 <p> Author: <%= comment.author %>, Content: <%= comment.content %>, Votes: <%= comment.votes %>
-<button type="submit" class="vote_button" onclick="vote(<%= comment.id %>)">Vote </button></p> 
+<% if ! cookies[:voted] %>
+<%= link_to 'Vote', vote_path(:comment_id => comment.id) %>
+<% end %>
 <% end %>
 </div>
