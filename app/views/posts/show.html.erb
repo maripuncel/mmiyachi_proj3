@@ -37,16 +37,6 @@ Votes: <%= comment.votes %>,
 &ltscript src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="test/javascript">
 &lt/script&gt<br/>
 &ltscript&gt
- function vote(id) {
-   var data = "http://intense-coast-1179.herokuapp.com/posts/<%= @post.id %>/vote?comment_id="+id;
-   $.ajax({
-     url: data,
-     success: function () {
-     }
-   });
- };
-&lt/script&gt<br/>
-&ltscript&gt
  $(function () {
    $( "#submit_button" )
      .click(function() {

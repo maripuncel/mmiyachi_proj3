@@ -1,14 +1,14 @@
 <div id="comments">
 <% @priority.each do |comment| %>
 <p> Author: <%= comment.author %>, Content: <%= comment.content %>, Votes: <%= comment.votes %>
-<% if ! cookies[:voted] %>
+<% if ! cookies[comment.id] %>
 <%= link_to 'Vote', vote_path(:comment_id => comment.id) %>
 <% end %>
 Prioritized by admin</p>
 <% end %>
 <% @comments.each do |comment| %>
 <p> Author: <%= comment.author %>, Content: <%= comment.content %>, Votes: <%= comment.votes %>
-<% if ! cookies[:voted] %>
+<% if ! cookies[comment.id] %>
 <%= link_to 'Vote', vote_path(:comment_id => comment.id) %>
 <% end %>
 <% end %>

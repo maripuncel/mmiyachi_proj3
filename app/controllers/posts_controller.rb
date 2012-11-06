@@ -56,10 +56,12 @@ class PostsController < ApplicationController
   # Output: updated comment with new vote count
   def vote
     set_cors_headers
-    cookies[:voted] = Hash.new if ! cookies[:voted]
+    id = params[:comment_id].to_s
+    cookies[id] = Hash.new if ! cookies[id]
     if @post = Post.find(params[:id])
       @post.increment_votes(params[:comment_id].to_i)
     end
+    redirect_to :back
   end
 
   # GET /posts/new
