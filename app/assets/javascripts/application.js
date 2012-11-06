@@ -13,3 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(function () { $( "#submit_button" ) .click(function() { var name = $("input#author").val(); var content = $("input#content").val(); var data = "http://intense-coast-1179.herokuapp.com/posts/2/comment?author="+name+"&content="+content; $.ajax({ type: "POST", url: data, cache: false, success: function() { $("#commentBox").append("Yay"); } }); poll(); }); }); $(document).ready(function() {poll();}); function poll () { $("#commentBox").load("http://intense-coast-1179.herokuapp.com/posts/2/retrieve #comments"); setTimeout(poll, 1000); };
